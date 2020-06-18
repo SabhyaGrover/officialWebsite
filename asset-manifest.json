@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.904405ec.chunk.css",
+    "main.js": "/static/js/main.b50331c9.chunk.js",
+    "main.js.map": "/static/js/main.b50331c9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6417d7bf.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6417d7bf.js.map",
+    "static/js/2.eb0f7e50.chunk.js": "/static/js/2.eb0f7e50.chunk.js",
+    "static/js/2.eb0f7e50.chunk.js.map": "/static/js/2.eb0f7e50.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7829702f97d8cb0d7d979364c32224c2.js": "/precache-manifest.7829702f97d8cb0d7d979364c32224c2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.904405ec.chunk.css.map": "/static/css/main.904405ec.chunk.css.map",
+    "static/js/2.eb0f7e50.chunk.js.LICENSE.txt": "/static/js/2.eb0f7e50.chunk.js.LICENSE.txt",
+    "static/media/Projects.svg": "/static/media/Projects.e60eac57.svg",
+    "static/media/Sponsership.svg": "/static/media/Sponsership.0e8afb5c.svg",
+    "static/media/ThaparUniversity_1.jpg": "/static/media/ThaparUniversity_1.c7f8f002.jpg",
+    "static/media/dsc_logo.png": "/static/media/dsc_logo.0d517ed6.png",
+    "static/media/events.svg": "/static/media/events.985f281c.svg",
+    "static/media/googlefinal.ico": "/static/media/googlefinal.6954b6f2.ico",
+    "static/media/header.png": "/static/media/header.b6e2ce15.png",
+    "static/media/projects.jpg": "/static/media/projects.c557ab28.jpg",
+    "static/media/slack.png": "/static/media/slack.87400755.png",
+    "static/media/team.webp": "/static/media/team.31c7575f.webp",
+    "static/media/undraw_Firmware_jw6u.svg": "/static/media/undraw_Firmware_jw6u.f47cc427.svg",
+    "static/media/undraw_Growing_qwt2.svg": "/static/media/undraw_Growing_qwt2.a217b34f.svg",
+    "static/media/undraw_digital_currency_qpak.svg": "/static/media/undraw_digital_currency_qpak.a84f8fb2.svg",
+    "static/media/undraw_positive_attitude_xaae.svg": "/static/media/undraw_positive_attitude_xaae.f1347d6d.svg",
+    "static/media/undraw_programming_2svr.svg": "/static/media/undraw_programming_2svr.cb01a9a5.svg",
+    "static/media/undraw_progressive_app_m9ms.svg": "/static/media/undraw_progressive_app_m9ms.3ca8774f.svg",
+    "static/media/undraw_scrum_board_cesn.svg": "/static/media/undraw_scrum_board_cesn.fd1f6093.svg",
+    "static/media/unnamed.png": "/static/media/unnamed.20c52900.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6417d7bf.js",
+    "static/js/2.eb0f7e50.chunk.js",
+    "static/css/main.904405ec.chunk.css",
+    "static/js/main.b50331c9.chunk.js"
+  ]
+}
