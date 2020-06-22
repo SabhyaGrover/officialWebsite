@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,7 +8,14 @@ import { Link, withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
 import styled from "styled-components";
 import "../components/styles/NavBar.css";
-
+import Switch from "@material-ui/core/Switch";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import {
+  orange,
+  lightBlue,
+  deepPurple,
+  deepOrange
+} from "@material-ui/core/colors";
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1
@@ -23,7 +30,10 @@ const useStyles = makeStyles(theme => ({
       display: "block"
     }
   },
-
+  darkToggle: {
+    width: 45,
+    height: 23
+  },
   sectionDesktop: {
     display: "none",
 
@@ -51,6 +61,24 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavAlt = props => {
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "dark" : "light";
+  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
+  const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: palletType,
+      primary: {
+        main: mainPrimaryColor
+      },
+      secondary: {
+        main: mainSecondaryColor
+      }
+    }
+  });
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
   window.onscroll = function() {
     if (props.location.pathname === "/") {
       scrollFunction();
@@ -83,83 +111,89 @@ const NavAlt = props => {
   }, [props]);
 
   return (
-    <div className={classes.grow}>
-      <ResponsiveDiv>
-        <AppBar
-          position="fixed"
-          style={{ backgroundColor: "white" }}
-          id="appbar"
-          className="fill"
-        >
-          <Container fixed>
-            <Toolbar>
-              <img
-                src={dsclogo}
-                alt="logo"
-                className={classes.logo}
-                id="logo"
-              />
-              <Typography
-                className={classes.title}
-                variant="h6"
-                noWrap
-                id="text"
-              >
-                &nbsp; DSC TIET
-              </Typography>
-              <div className={classes.grow} />
-              <div className={classes.sectionDesktop}>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/" className={classes.button}>
-                    Home
-                  </Link>
+    <ThemeProvider theme={darkTheme}>
+      <div className={classes.grow}>
+        <ResponsiveDiv>
+          <AppBar
+            position="fixed"
+            style={{ backgroundColor: "white" }}
+            id="appbar"
+            className="fill"
+          >
+            <Container fixed>
+              <Toolbar>
+                <img
+                  src={dsclogo}
+                  alt="logo"
+                  className={classes.logo}
+                  id="logo"
+                />
+                <Typography
+                  className={classes.title}
+                  variant="h6"
+                  noWrap
+                  id="text"
+                >
+                  &nbsp; DSC TIET
+                </Typography>
+
+                <div className={classes.grow} />
+                <div className={classes.sectionDesktop}>
+                  <div style={{ paddingRight: "10px" }}>
+                    <Link to="/" className={classes.button}>
+                      Home
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <Link to="/events" className={classes.button}>
+                      Events
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <Link to="/projects" className={classes.button}>
+                      Projects
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <Link to="/team" className={classes.button}>
+                      Team
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <Link
+                      onClick={e => {
+                        e.preventDefault();
+                        window.location.href =
+                          "https://medium.com/developer-student-clubs-tiet";
+                      }}
+                      target="_blank"
+                      className={classes.button}
+                    >
+                      Blog
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <Link
+                      onClick={e => {
+                        e.preventDefault();
+                        window.location.href = "https://raw-talent.webflow.io/";
+                      }}
+                      target="_blank"
+                      className={classes.button}
+                    >
+                      Podcast
+                    </Link>
+                  </div>
+                  <div className={classes.button}>
+                    <Switch checked={darkState} onChange={handleThemeChange} />
+                  </div>
                 </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/events" className={classes.button}>
-                    Events
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/projects" className={classes.button}>
-                    Projects
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/team" className={classes.button}>
-                    Team
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link
-                    onClick={e => {
-                      e.preventDefault();
-                      window.location.href =
-                        "https://medium.com/developer-student-clubs-tiet";
-                    }}
-                    target="_blank"
-                    className={classes.button}
-                  >
-                    Blog
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link
-                    onClick={e => {
-                      e.preventDefault();
-                      window.location.href = "https://raw-talent.webflow.io/";
-                    }}
-                    target="_blank"
-                    className={classes.button}
-                  >
-                    Podcast
-                  </Link>
-                </div>
-              </div>
-            </Toolbar>
-          </Container>
-        </AppBar>
-      </ResponsiveDiv>
-    </div>
+              </Toolbar>
+            </Container>
+          </AppBar>
+        </ResponsiveDiv>
+      </div>
+    </ThemeProvider>
   );
 };
 
